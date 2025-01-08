@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Linktree</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, black, #2E6F2F, #5BDE5D);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+        }
+        .container {
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 20%;
+            margin-bottom: 15px;
+            border: 3px solid #fff;
+            object-fit: cover;
+        }
+        .link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+            padding: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .link:hover {
+            transform: scale(1.1);
+            transition: all 0.3s ease;
+            border-radius: 10px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #f1f1f1;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="Icons/Marvin pb.PNG" alt="Profilbild" class="profile-image">
+        <h1>murph_y_</h1>
+        <p>Willkommen in meinem Linktree! Hier findet ihr meine Socials</p>
+        <a href="https://www.youtube.com/@Murph_Y_" target="_blank" class="link">
+            <img src="Icons/Youtube Icon.png" alt="Youtube" width="60" height="40">
+            <span>&nbsp;&nbsp;&nbsp;Youtube</span>
+        </a>
+        <a href="https://www.twitch.tv/murph_y__" target="_blank" class="link">
+            <img src="Icons/Twitch icon.PNG" alt="Twitch" width="65" height="65">
+            <span>Twitch</span>
+        </a>
+        <a href="https://www.tiktok.com/@murph_y_96_" target="_blank" class="link">
+            <img src="Icons/Tiktok icon.PNG" alt="TikTok" width="60" height="60">
+            <span>&nbsp;TikTok</span>
+        </a>
+        <a href="https://www.instagram.com/murphy.96/" target="_blank" class="link">
+            <img src="Icons/insta icon.PNG" alt="Instagram" width="50" height="50">
+            <span>&nbsp;&nbsp;&nbsp;Instagram</span>
+        </a>
+        <div class="footer">Gönnt euch!</div>
+    </div>
+    <script>
+        function fireworkEffect() {
+            const duration = 3 * 1000; 
+            const end = Date.now() + duration;
+
+            (function frame() {
+                confetti({
+                    particleCount: 3,
+                    angle: Math.random() * 360,
+                    spread: 70,
+                    origin: {
+                        x: Math.random(),
+                        y: Math.random() - 0.2
+                    }
+                });
+
+                if (Date.now() < end) {
+                    requestAnimationFrame(frame);
+                }
+            })();
+        }
+
+        window.onload = fireworkEffect;
+    </script>
+</body>
+</html>
